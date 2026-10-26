@@ -7,7 +7,7 @@ public static int[][] generarMatriz (int filas, int columna){ //creamos una func
             int numero = (int)(Math.random() * numGenerador) + 1; //crea el numero aleatorio que va de 1 a 9;
             matriz[i][j] = numero; //se guarda el numero en una posicion especifica;
         }
-    }
+    }//hola caracola
     return matriz; //devuelve la matriz aleatorio;
 }
 
