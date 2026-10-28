@@ -18,5 +18,21 @@ public static int[][] multiplicarMatrizRecursivo(int[][] matriz1, int[][]matriz2
     int columnas2 = matriz2[0].length;
 
 }
+
+public static int[][] multiplicarMatIterativo ( int[][] mat1, int[][] mat2)
+{//funcion iterativa con 2 matrices como parametros
+    int filas1 = mat1.length; //variable numero de filas matriz 1
+    int columnas1 = mat1[0].length; //numero columnas matriz 1 y filas matriz2
+    int columnas2 = mat2[0].length;//numero columnas matriz 2
+    int[][] resul = new int[filas1][columnas2]; //instanciamos una nueva matriz resultado
+    for (int i = 0; i < filas1; i++) { //recorre filas matriz 1
+        for (int j = 0; j < columnas2; j++) { //recorre columnas matriz1 y filas matriz 2
+            for (int k = 0; k < columnas1;k++) { // recorre columnas matriz 2
+                resul[i][j] += mat1[i][k] * mat2[k][j];
+            }
+        }
+    }
+    return resul;
+}
 void main() {
 }
