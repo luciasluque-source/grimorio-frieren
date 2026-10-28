@@ -18,6 +18,22 @@ public static int[][] multiplicarMatrizRecursivo(int[][] matriz1, int[][]matriz2
     int columnas2 = matriz2[0].length;
 
 }
+public static int[][] multiplicarMatrizRecursivo(int[][] matriz1, int[][]matriz2, int [][] resul, int i, int j, int k) { //resul reccoge la matriz resultado, i son las filas, j las columnas y k es un metodo auxiliar que utilizaremos de indice para calcular el producto escalar entre una fila de la primera matriz y la columna de la segunda;
+   if(matriz1[0].length != matriz2.length ){
+       throw new IllegalArgumentException("Dimesiones incompatibles para la multiplicación");
+   }
+   if (i == matriz1.length) {
+        return resul;
+    }
+    if (k == matriz1.length) {
+        if (j + 1 < matriz2.length) {
+            return multiplicarMatrizRecursivo(matriz1, matriz2, resul, i, j + 1, 0);
+        } else {
+            return multiplicarMatrizRecursivo(matriz1, matriz2, resul, i + 1, 0, 0);
+        }
+    }
+    resul[i][j] += matriz1[i][k] * matriz2[k][j];
+    return multiplicarMatrizRecursivo(matriz1, matriz2, resul, i, j, k + 1);
 
 public static int[][] multiplicarMatIterativo ( int[][] mat1, int[][] mat2)
 {//funcion iterativa con 2 matrices como parametros
